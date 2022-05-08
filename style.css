@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-body {
+header {
   background-image: url(https://templatemo.com/templates/templatemo_541_host_cloud/assets/images/banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -19,6 +19,7 @@ nav {
   padding: 10px;
   display: flex;
   align-items: center;
+  padding: 20px 0;
 }
 
 .center {
@@ -31,6 +32,7 @@ nav {
 .center > h2 {
   font-size: 24px;
   color: aliceblue;
+  cursor: pointer;
 }
 .center > h2 > span {
   font-size: 16px;
@@ -46,12 +48,12 @@ nav {
   display: flex;
 }
 .left_bar > ul > li {
+  font-size: 12pt;
   list-style: none;
-  margin: 0 10px;
-  font-size: 18px;
+  margin: 0 25px;
   color: aliceblue;
   cursor: pointer;
-  font-weight: 100;
+  font-weight: 300;
   display: block;
 }
 
@@ -60,9 +62,9 @@ nav {
   padding: 6px 20px;
   border: 2px solid white;
   color: white;
-  font-size: 13px;
   cursor: pointer;
-  margin: 0 10px 0 40px;
+  margin: 0 10px 0 60px;
+  font-size: 12pt;
 }
 
 .btn_1:hover {
@@ -78,7 +80,7 @@ nav {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12pt;
 }
 
 .center > i {
@@ -89,7 +91,107 @@ nav {
   color: #00bcd4;
 }
 
-@media only screen and (max-width: 1000px) {
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  flex-direction: column;
+  font-size: 32px;
+}
+
+.banner > h2 {
+  margin-bottom: 10px;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.middle > input {
+  margin: 2rem 0;
+  padding: 15px;
+  width: 400px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.middle > input::placeholder {
+  color: white;
+}
+.middle > button {
+  padding: 15px 40px;
+  font-size: 15px;
+  background-color: #00bcd4;
+  border-style: none;
+  color: white;
+}
+.checkbox_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: white;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media only screen and (max-width: 1250px) {
   .center {
     width: 90%;
   }
@@ -98,6 +200,28 @@ nav {
   }
   .center > i {
     display: block;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .banner {
+    text-align: center;
+  }
+  .middle > input {
+    min-width: 200px;
+  }
+  .middle > button {
+    width: 100%;
+  }
+  .middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .checkbox_list {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
